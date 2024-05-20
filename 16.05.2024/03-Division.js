@@ -9,4 +9,4 @@ function division(num) {
     console.log("Not divisible")
 }
 
-division(10);
+division(5);
