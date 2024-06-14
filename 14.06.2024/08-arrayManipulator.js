@@ -1,7 +1,7 @@
 function arrayManipulator(nums, commands) {
   for (const command of commands) {
     let tokens = command.split(' ');
-    const action = Number(tokens.shift());
+    const action = tokens.shift();
 
     if (action === "add") {
       let index = Number(tokens.shift());
