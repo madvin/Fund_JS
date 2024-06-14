@@ -1,43 +1,41 @@
 function passValidate(pass) {
 
-    function lengthOfPass(pass) {
-    if (pass.length < 6 && pass.length > 10) {
-        console.log('Password must be between 6 and 10 characters');
-        return false;
-    } else {
+  function lengthOfPass(pass) {
+    if (pass.length >= 6 && pass.length <= 10) {   
         return true;
+    } else {
+        console.log("Password must be between 6 and 10 characters");
+        return false;
+    }
+  }
+  function passAlphaNumeral(pass) {
+const pattern = /\w+]/;
+    if (pattern.test(pass)) {
+      return true;
+    } else {
+      console.log("Password must consist only of letters and digits");
+      return false;
+    }
+  }
+
+  function checkMin2Digits(pass) {
+
+    const pattern = /[0-9]{2,}/;
+
+    if (pattern.test(pass)) {
+      return true;
+    } else {
+      console.log("Password must have at least 2 digits");
+      return false;
     }
 }
-    function passAlphaNumeral(num) {
-        const pattern = /\w+/;
-        if (pattern.test(pass)) {
-            return true;
-        } else {
-            console.log('Password must consist only of letters and digits');
-            return false;
-        }
-    }
-    function digitsCheck(num) {
-        let count = 0;
-        for (const symbol of num) {
-            const pattern = [/0-9/];
-            const curSymb = symbol;
-            if (curSymb.test(pattern)) {
-                count++
+const isLenght = lengthOfPass(pass);
+const isAlphaNumer = passAlphaNumeral(pass);
+const is2Digits = checkMin2Digits(pass);
 
-            
-                if (count >= 2){
-                    return true;
-                } else {
-                    console.log('Password must have at least 2 digits');
-                    return false;
-                }
-            }
+  if (isLenght && isAlphaNumer && is2Digits) {
+    console.log("Password is valid");
+  }
 
-        }
-    }
-    if (passAlphaNumeral && digitsCheck && lengthOfPass) {
-        console.log('Password is valid')
-    }
 }
-passValidate('login')
+passValidate("pass22uty567");
