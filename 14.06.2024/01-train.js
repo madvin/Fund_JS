@@ -1,13 +1,13 @@
 function train(arr) {
-  let wagons = arr.shift().split(" ").map(Number);
+  let wagons = arr.shift().split(' ').map(Number);
   const capacity = Number(arr.shift());
   for (let command of arr) {
-    if (command.includes("Add")) {
-      const tokens = command.split(" ");
-      const newPassengers = Number(tokens[1]);
+    if (command.includes('Add')) {
+      const tokens = command.split(' ');
+      const passengers = Number(tokens[1]);
+      wagons.push(passengers);
     } else {
-      let newPassengers = Number(command);
-      const passengers = Number(command);
+      const newPassengers = Number(command);
       for (let j = 0; j < wagons.length; j++) {
         if (wagons[j] + newPassengers <= capacity) {
           wagons[j] += newPassengers;
