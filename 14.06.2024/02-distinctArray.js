@@ -2,7 +2,7 @@ function distinct(arr) {
     let uniqueNums = [];
     for (const num of arr) {
         if (!uniqueNums.includes(num)) {
-            uniqueNums.push();
+            uniqueNums.push(num);
         }
     }
     console.log(uniqueNums.join(' '));
