@@ -1,57 +1,62 @@
 function treasure(arr) {
-    let items = arr.shift().split('|');
-    let command = arr.shift();
-    let gainSum = 0;
+  let items = arr.shift().split("|");
+  let command = arr.shift();
+  let gainSum = 0;
 
-    while (command !== 'Yohoho!') {
-        let tokens = command.split(' ');
-        const action = tokens.shift();
+  while (command !== "Yohoho!") {
+    let tokens = command.split(" ");
+    const action = tokens.shift();
 
-        switch (action) {
-            case 'Loot':
-            const newItems = tokens;
-            for (const newItem of newItems) {
-                if (!items.includes(newItems)) {
-                    items.unshift(newItem);
-                }
-            }
-            
-            break;
-            case 'Drop':
-                const index = Number(tokens.shift());
-
-                if (index >= 0 && index < items.length) {
-                    const deletedItem = items.splice(index, 1)[0];
-                    items.push(deletedItem);
-                }
-                break;
-            case 'Steal':
-                const countToDelete = Number(tokens.shift());
-                const stolenItems = items.splice(-countToDelete);
-                console.log(stolenItems.join(', '));
-            break;
+    switch (action) {
+      case "Loot":
+        const newItems = tokens;
+        for (const newItem of newItems) {
+          if (!items.includes(newItems)) {
+            items.unshift(newItem);
+          }
         }
-        command = arr.shift();
-    }
-    
 
-    if (items.length === 0) {
-        console.log('Failed treasure hunt');
-    } else {
-        gainSum += items.length;
+        break;
+      case "Drop":
+        const index = Number(tokens.shift());
+
+        if (index >= 0 && index < items.length) {
+          const deletedItem = items.splice(index, 1)[0];
+          items.push(deletedItem);
+        }
+        break;
+      case "Steal":
+        const countToDelete = Number(tokens.shift());
+        const stolenItems = items.splice(-countToDelete);
+        console.log(stolenItems.join(", "));
+        break;
     }
+    command = arr.shift();
+  }
+  
+  for (const item of items) {
+    gainSum += item.length
+  }
+
+  if (items.length === 0) {
+    console.log("Failed treasure hunt.");
+  } else {
+
     const averageGain = gainSum / items.length;
-    console.log(`Average treasure gain: ${averageGain.toFixed(2)} pirate credits`);
+    console.log(`Average treasure gain: ${averageGain.toFixed(2)} pirate credits.`);
+  }
 }
 
-treasure(["Gold|Silver|Bronze|Medallion|Cup",
+treasure([
+  "Gold|Silver|Bronze|Medallion|Cup",
 
-"Loot Wood Gold Coins",
+  "Loot Wood Gold Coins",
 
-"Loot Silver Pistol",
+  "Loot Silver Pistol",
 
-"Drop 3",
+  "Drop 3",
 
-"Steal 3",
+  "Steal 3",
 
-"Yohoho!"])
+  "Yohoho!",
+]);
