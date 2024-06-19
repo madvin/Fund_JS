@@ -40,8 +40,8 @@ function arrayManipulator(nums, commands) {
       let resultArr = [];
 
       for (let i = 0; i < nums.length; i += 2) {
-        const curNum = Number(nums[i]);
-        const nextNum = Number(nums[i + 1]);
+        const curNum = nums[i];
+        const nextNum = nums[i + 1];
         if (nextNum === undefined) {
           resultArr.push(curNum);
         } else {
