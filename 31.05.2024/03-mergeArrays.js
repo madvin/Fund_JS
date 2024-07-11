@@ -8,10 +8,12 @@ function mergeArrays(arr1, arr2) {
             let sum = Number(el1) + Number(el2);
             newArray.push(sum);
         } else {
-            let concatenation = arr1 + arr2;
+            let concatenation = el1 + el2;
             newArray.push(concatenation);
         }
     }
-    console.log(newArray.push(' - '));
+    console.log(newArray.join(' - '));
 }
-mergeArrays()
+mergeArrays(['5', '15', '23', '56', '35'],
+
+    ['17', '22', '87', '36', '11'])
