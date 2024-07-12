@@ -1,4 +1,4 @@
-function muOnline(arr) {
+function dungeon(arr) {
     const rooms = arr.split('|');
     let health = 100;
     let fortune = 0;
@@ -17,7 +17,7 @@ function muOnline(arr) {
             console.log(`Current health: ${health} hp.`);
         } else if (command === 'chest') {
             fortune += value;
-            console.log(`You found ${value} bitcoins.`);
+            console.log(`You found ${value} coins.`);
         } else {
             let damage = value;
             health -= damage;
@@ -32,7 +32,7 @@ function muOnline(arr) {
         count++;
     }
     console.log("You've made it!");
-    console.log(`Bitcoins: ${fortune}`);
+    console.log(`Coins: ${fortune}`);
     console.log(`Health: ${health}`);
 }
-muOnline("rat 10|bat 20|potion 10|rat 10|chest 100|boss 70|chest 1000")
+dungeon("rat 10|bat 20|potion 10|rat 10|chest 100|boss 70|chest 1000")
