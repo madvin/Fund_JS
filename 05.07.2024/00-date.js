@@ -7,7 +7,10 @@ const todaysDate = {
 
     },
 };
-// const today = todaysDate.showDate()
-// console.log(today);
+const today = todaysDate.showDate()
+console.log(today);
 
 console.log(date);
+
+console.log(todaysDate);
+

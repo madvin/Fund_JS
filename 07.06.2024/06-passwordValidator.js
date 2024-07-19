@@ -9,7 +9,7 @@ function passValidate(pass) {
     }
   }
   function passAlphaNumeral(pass) {
-const pattern = /\w+]/;
+const pattern = /^[A-Za-z0-9]+$/;
     if (pattern.test(pass)) {
       return true;
     } else {
@@ -38,4 +38,4 @@ const is2Digits = checkMin2Digits(pass);
   }
 
 }
-passValidate("pass22uty567");
+passValidate('MyPass123');
