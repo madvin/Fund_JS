@@ -38,4 +38,4 @@ const is2Digits = checkMin2Digits(pass);
   }
 
 }
-passValidate('MyPass123');
+passValidate('MyPass12');
