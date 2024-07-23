@@ -1,6 +1,6 @@
 function passValidate(pass) {
 
-  function lengthOfPass(pass) {
+  function lengthOfPass() {
     if (pass.length >= 6 && pass.length <= 10) {   
         return true;
     } else {
@@ -8,7 +8,7 @@ function passValidate(pass) {
         return false;
     }
   }
-  function passAlphaNumeral(pass) {
+  function passAlphaNumeral() {
 const pattern = /^[A-Za-z0-9]+$/;
     if (pattern.test(pass)) {
       return true;
@@ -18,7 +18,7 @@ const pattern = /^[A-Za-z0-9]+$/;
     }
   }
 
-  function checkMin2Digits(pass) {
+  function checkMin2Digits() {
 
     const pattern = /[0-9]{2,}/;
 
@@ -38,4 +38,4 @@ const is2Digits = checkMin2Digits(pass);
   }
 
 }
-passValidate('MyPass12');
+passValidate('MyPass123');
