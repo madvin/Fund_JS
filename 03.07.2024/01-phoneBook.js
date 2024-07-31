@@ -1,11 +1,9 @@
 function phone(input) {
   let phoneBook = {};
   for (const details of input) {
-    const name = details.split(" ")[0];
-    const phone = details.split(" ")[1];
+    const [name, phone] = details.split(' ');
     phoneBook[name] = phone;
   }
-
   for (const key in phoneBook) {
     console.log(`${key} -> ${phoneBook[key]}`);
   }
